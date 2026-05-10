@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* =========================
+   E-WASTE LOCATOR UI STYLES
+   ========================= */
+
+/* Page title */
+h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+/* Status text */
+#status {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Search bar */
+#searchBox {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#searchBox:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59,130,246,0.3);
+}
+
+/* Search button */
+button {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Map container */
+#map {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Results container */
+#results {
+    margin-top: 10px;
+}
+
+/* Center card */
+#results div {
+    transition: 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#results div:hover {
+    transform: scale(1.01);
+}
+
+/* Navigate button */
+a {
+    transition: 0.2s;
+}
+
+a:hover {
+    opacity: 0.85;
+}
+
+/* Loader (if you add later) */
+#loader {
+    font-weight: bold;
+    color: #2563eb;
+    margin: 10px 0;
+}
+
+/* Open Now checkbox */
+input[type="checkbox"] {
+    transform: scale(1.1);
+    margin-left: 5px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+
+    #searchBox {
+        width: 100% !important;
+        margin-bottom: 8px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
