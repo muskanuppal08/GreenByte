@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 import EducationSection from '@/Components/Education/EducationSection';
 
-export default function Dashboard() {
+export default function Dashboard({ stats }) {
     return (
         <AuthenticatedLayout
             header={
@@ -28,18 +28,18 @@ export default function Dashboard() {
                                     className="p-6 bg-slate-700/50 rounded-xl border border-slate-600 hover:border-cyan-400 transition-colors group"
                                 >
                                     <h4 className="font-bold text-cyan-400 group-hover:scale-105 transition-transform origin-left">Manage Facilities</h4>
-                                    <p className="text-2xl font-bold">Facilities List</p>
-                                    <p className="text-xs text-slate-500 mt-1">Add, edit, or remove recycling centers</p>
+                                    <p className="text-2xl font-bold">{stats.total_facilities}</p>
+                                    <p className="text-xs text-slate-500 mt-1">Total active centers</p>
                                 </Link>
                                 <div className="p-6 bg-slate-700/50 rounded-xl border border-slate-600">
                                     <h4 className="font-bold text-emerald-400">Users</h4>
-                                    <p className="text-2xl font-bold">1,240</p>
+                                    <p className="text-2xl font-bold">{stats.total_users}</p>
                                     <p className="text-xs text-slate-500 mt-1">Registered recyclers</p>
                                 </div>
                                 <div className="p-6 bg-slate-700/50 rounded-xl border border-slate-600">
-                                    <h4 className="font-bold text-amber-400">Reports</h4>
-                                    <p className="text-2xl font-bold">12</p>
-                                    <p className="text-xs text-slate-500 mt-1">Pending verification</p>
+                                    <h4 className="font-bold text-amber-400">Reviews</h4>
+                                    <p className="text-2xl font-bold">{stats.pending_reports}</p>
+                                    <p className="text-xs text-slate-500 mt-1">Total user reviews</p>
                                 </div>
                             </div>
                         </div>
