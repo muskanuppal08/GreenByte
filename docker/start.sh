@@ -8,11 +8,9 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-# Run database migrations (only if a database host is provided)
-if [ -n "$DB_HOST" ]; then
-    echo "Running database migrations..."
-    php artisan migrate --force
-fi
+# Run database migrations
+echo "Running database migrations..."
+php artisan migrate --force
 
 # Start Apache in the foreground
 exec apache2-foreground
