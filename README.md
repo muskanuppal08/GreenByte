@@ -61,6 +61,14 @@
 - **Custom Charts**: Responsive SVG bar charts (monthly items), donut charts (e-waste categories), and area charts (carbon offsets).
 - **Admin Analytics**: Global overview graphs displaying pickup success rates, facility densities by city, and top recyclers.
 
+### 🌟 Extra Advanced Features
+- **🌙 Global Dark Mode**: Instant light/dark theme switcher stored in `localStorage` to preserve theme preference across sessions.
+- **🌐 Multilingual Translation Engine**: Dynamic translation dropdown supporting **English (EN)**, **Hindi (HI)**, and **Spanish (ES)** for layout elements and navigation menus.
+- **✉️ Automated Email Notifications**: Custom mailables (`PickupConfirmed`, `RewardCredited`) dispatched on doorstep pickup confirmation and eco-points allocation.
+- **🔔 Live In-App Notification Drawer**: Real-time header bell drawer with unread count badge, mark-as-read, and deletion actions.
+- **📜 Verified Print-Ready Certificates**: Renders a premium certificate dynamically, complete with verification QR codes and browser-based printing.
+- **💬 Interactive AI Chatbot**: Slide-out chat console connected to a local keyword NLP matching engine for batteries, mobiles, laptops, and printer recycling guides.
+
 </details>
 
 ---
