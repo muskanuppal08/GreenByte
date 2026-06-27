@@ -69,6 +69,12 @@ export default function AuthenticatedLayout({ header, children }) {
                                         >
                                             System Reports
                                         </NavLink>
+                                        <NavLink
+                                            href={route('admin.analytics.index')}
+                                            active={route().current('admin.analytics.*')}
+                                        >
+                                            Platform Analytics
+                                        </NavLink>
                                     </>
                                 )}
 
@@ -97,6 +103,12 @@ export default function AuthenticatedLayout({ header, children }) {
                                             active={route().current('recommendations.*')}
                                         >
                                             AI Assistant
+                                        </NavLink>
+                                        <NavLink
+                                            href={route('impact.index')}
+                                            active={route().current('impact.*')}
+                                        >
+                                            Impact Dashboard
                                         </NavLink>
                                     </>
                                 )}
@@ -267,6 +279,12 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     System Reports
                                 </ResponsiveNavLink>
+                                <ResponsiveNavLink
+                                    href={route('admin.analytics.index')}
+                                    active={route().current('admin.analytics.index')}
+                                >
+                                    Platform Analytics
+                                </ResponsiveNavLink>
                             </>
                         )}
 
@@ -295,6 +313,12 @@ export default function AuthenticatedLayout({ header, children }) {
                                      active={route().current('recommendations.index')}
                                  >
                                      AI Assistant
+                                 </ResponsiveNavLink>
+                                 <ResponsiveNavLink
+                                     href={route('impact.index')}
+                                     active={route().current('impact.index')}
+                                 >
+                                     Impact Dashboard
                                  </ResponsiveNavLink>
                              </>
                         )}

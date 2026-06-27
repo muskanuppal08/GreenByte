@@ -35,6 +35,10 @@ A comprehensive, gamified platform designed to encourage responsible electronic 
    - **NLP Natural Language Processing**: Categorization of user queries to detect target device type, brand, and condition state (Excellent, Good, Average, Poor) with corresponding reward multipliers.
    - **Proximity Search**: Integrates geolocational coordinates to locate the closest certified recycling center accepting the specific target device.
    - **Hazards & Guidelines**: Pulls hazard information, health effects, and recycling instructions from the database for the resolved device category.
+9. **Module 9: Environmental Impact Dashboard**
+   - **Personal & Community Metrics**: Dual-layer analytics tracing total devices recycled, CO₂ saved, waste diverted from landfill, and gold/silver/copper recovered.
+   - **Custom Interactive SVG Charts**: Hand-crafted responsive Bar (monthly recycling), Donut (device type breakdown), and Line/Area (cumulative carbon offset) charts.
+   - **Platform Analytics Board**: Admin-side analytics summarizing facility density by city, user leaderboards, and monthly completed vs cancelled collection ratios.
 
 ---
 
@@ -99,6 +103,7 @@ Here is the table of all routes and URLs you can visit to go through and verify 
 | **[`/leaderboard`](http://127.0.0.1:8000/leaderboard)** | User (`role:user`) | Module 5 | **Leaderboard & Badges**: Leaderboard rankings, animated level status indicators, and unlocked/locked badge achievements grid. |
 | **[`/pickups`](http://127.0.0.1:8000/pickups)** | User (`role:user`) | Module 6 | **Home Pickups**: Schedule doorstep collections, select slots/future dates, track historical requests, and cancel pending orders. |
 | **[`/recommendations`](http://127.0.0.1:8000/recommendations)** | User (`role:user`) | Module 8 | **AI Assistant**: Natural language prompt field and template selectors to parse e-waste specs, calculate eco-points, locate nearest centers, and inspect toxicity warnings. |
+| **[`/impact`](http://127.0.0.1:8000/impact)** | User (`role:user`) | Module 9 | **Impact Dashboard**: Renders statistics cards and custom interactive SVG charts displaying personal and community carbon offset, metals recovered, and diverted waste. |
 | **[`/profile`](http://127.0.0.1:8000/profile)** | User (`role:user`) | Module 1 | **Profile Manager**: Edit profile details, change passwords, and upload/delete custom avatar images. |
 | **[`/admin/dashboard`](http://127.0.0.1:8000/admin/dashboard)** | Admin (`role:admin`) | Module 1 & 4 | **Admin Dashboard**: Displays aggregate analytics metrics for users, facilities, and calculations. |
 | **[`/admin/facilities`](http://127.0.0.1:8000/admin/facilities)** | Admin (`role:admin`) | Module 2 | **Facility CRUD Manager**: Admin panel to add, edit, or delete certified recycling centers. |
@@ -107,6 +112,7 @@ Here is the table of all routes and URLs you can visit to go through and verify 
 | **[`/admin/users`](http://127.0.0.1:8000/admin/users)** | Admin (`role:admin`) | Module 7 | **Manage Users**: Toggle user/admin roles, delete users, and adjust user eco-points. |
 | **[`/admin/education`](http://127.0.0.1:8000/admin/education)** | Admin (`role:admin`) | Module 7 | **Manage Education**: Add, edit, or delete educational device hazard profiles. |
 | **[`/admin/reports`](http://127.0.0.1:8000/admin/reports)** | Admin (`role:admin`) | Module 7 | **System Reports**: View summary statistics and export database tables. |
+| **[`/admin/analytics`](http://127.0.0.1:8000/admin/analytics)** | Admin (`role:admin`) | Module 9 | **Platform Analytics**: Core dashboard summarizing site metrics, success rates, facility location densities, and top recyclers. |
 
 ---
 

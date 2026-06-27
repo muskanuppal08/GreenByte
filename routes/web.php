@@ -47,6 +47,9 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     // AI Recommendation Assistant
     Route::get('/recommendations', [RecommendationController::class, 'index'])->name('recommendations.index');
     Route::post('/recommendations/suggest', [RecommendationController::class, 'suggest'])->name('recommendations.suggest');
+
+    // Environmental Impact Dashboard
+    Route::get('/impact', [App\Http\Controllers\ImpactDashboardController::class, 'index'])->name('impact.index');
 });
 
 // ─── Admin Area (requires auth + admin role) ──────────────────────────────
@@ -85,6 +88,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Reports Generation
         Route::get('/reports', [App\Http\Controllers\AdminReportController::class, 'index'])->name('reports.index');
         Route::get('/reports/download/{type}', [App\Http\Controllers\AdminReportController::class, 'download'])->name('reports.download');
+
+        // Platform Analytics Dashboard
+        Route::get('/analytics', [App\Http\Controllers\AdminAnalyticsController::class, 'index'])->name('analytics.index');
     });
 });
 
