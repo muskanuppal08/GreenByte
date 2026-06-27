@@ -1,72 +1,95 @@
-# E-Waste Facility Locator & Gamified Recycling Platform
+# 🌿 GreenByte: E-Waste Locator & Gamified Recycling Platform
 
-A comprehensive, gamified platform designed to encourage responsible electronic waste disposal. Users can locate nearby certified recycling centers, calculate their recycling rewards, earn badges, rise through eco-levels on a global leaderboard, and schedule free doorstep pickups.
+[![Laravel Version](https://img.shields.shields.shields.shields.shields.shields.io/badge/Laravel-11.0-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
+[![React Version](https://img.shields.shields.shields.shields.shields.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![Vite Version](https://img.shields.shields.shields.shields.shields.shields.io/badge/Vite-8.0-646CFF?style=for-the-badge&logo=vite)](https://vite.dev)
+[![License](https://img.shields.shields.shields.shields.shields.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
+**GreenByte** is a comprehensive, gamified electronic waste (e-waste) management platform designed to encourage responsible hardware disposal. Standard users can consult our local AI assistant, locate closest certified facilities using real-time geocoding, book doorstep pickups, calculate carbon savings, earn badges, and rise through levels on a global leaderboard. Administrators are equipped with points adjustment panels, review moderation boards, doorstep fleet trackers, and exportable system analytics.
+
+---
+
+## ✨ Core Feature Highlights
+
+- **🧠 Local PHP NLP Parser**: Advanced natural language parser translating inputs (e.g. *"I have a broken Dell laptop"*) into categorizations, brand metrics, and condition multipliers.
+- **🗺️ Geolocation & Proximity Routing**: High-precision distance calculations utilizing the Haversine equation to route users to the closest certified facilities accepting their specific hardware category.
+- **📊 Interactive SVG Charting Engine**: Native, responsive React SVG charts (Bar charts, Donut charts, Cumulative Area graphs) rendering real-time personal vs. community environmental metrics without external heavy NPM libraries.
+- **🎮 Badges & Levels gamification**: Auto-award milestone system calculating Eco Levels based on points, transaction histories, and user rankings.
 
 ---
 
 ## 🚀 Implemented Modules
 
-1. **Module 1: Authentication & Profile Management**
-   - Separate login portals for standard users and admins.
-   - Profile management with dynamic custom profile picture uploads, verified email middleware, and password enforcement rules.
-2. **Module 2: Certified Facility Locator**
-   - Interactive center locator featuring geographical nearby calculations and search queries.
-   - Expandable details pane displaying accepted items, operating times, and star ratings/comments.
-3. **Module 3: E-Waste Education**
-   - Educational resource detail database for key devices (Mobile, Laptop, Battery, TV, Printer, etc.).
-   - Interactive popups highlighting harmful materials, health hazards, and environmental impacts.
-4. **Module 4: Reward Calculator & Admin Moderation**
-   - Carbon offset, metal recovery, and eco-point calculator tool based on retired hardware statistics.
-   - Admin review moderation board to approve/reject user center reviews before they go public.
-5. **Module 5: Gamification System**
-   - Dynamic Green Levels: *Eco Beginner*, *Green Warrior*, and *Earth Saver*.
-   - Automatic badges allocation system based on user achievements.
-   - Global Leaderboard showcasing points, rankings, and unlocked badge achievements.
-6. **Module 6: E-Waste Home Pickup Request**
-   - Doorstep collection scheduling wizard including device category cards, future date filters, and preferred time slots.
-   - Interactive user logs to monitor scheduled pickups and cancel pending requests.
-   - Admin/Recycling partner scheduling console to manage collections, add driver notes, and update statuses inline.
-7. **Module 7: Admin Panel**
-   - **Manage Users**: Toggle user/admin roles, delete user profiles, and view member parameters.
-   - **Manage Reward Points**: Adjust user eco-points dynamically via an administrative modal form (milestone badges re-evaluate automatically).
-   - **Manage Education**: Dedicated page to manage educational device hazards data.
-   - **Generate Reports**: Downloadable CSV reports for registered users, certified facilities, and pickup collection logs.
-8. **Module 8: AI Recommendation System (Advanced)**
-   - **NLP Natural Language Processing**: Categorization of user queries to detect target device type, brand, and condition state (Excellent, Good, Average, Poor) with corresponding reward multipliers.
-   - **Proximity Search**: Integrates geolocational coordinates to locate the closest certified recycling center accepting the specific target device.
-   - **Hazards & Guidelines**: Pulls hazard information, health effects, and recycling instructions from the database for the resolved device category.
-9. **Module 9: Environmental Impact Dashboard**
-   - **Personal & Community Metrics**: Dual-layer analytics tracing total devices recycled, CO₂ saved, waste diverted from landfill, and gold/silver/copper recovered.
-   - **Custom Interactive SVG Charts**: Hand-crafted responsive Bar (monthly recycling), Donut (device type breakdown), and Line/Area (cumulative carbon offset) charts.
-   - **Platform Analytics Board**: Admin-side analytics summarizing facility density by city, user leaderboards, and monthly completed vs cancelled collection ratios.
+<details open>
+<summary><b>Click to expand Module Details</b></summary>
+
+### 🔑 1. Authentication & Profile Management
+- Separate secure portals for standard users and administrative panels.
+- Custom avatar picture uploads, email verification middleware, and strict password complexity rules.
+
+### 📍 2. Certified Facility Locator
+- Proximity search queries allowing guests and users to filter centers by state, city, pincode, or accepted devices.
+- Side-panel drawer loading center details, review histories, ratings, operating times, and interactive write-review forms.
+
+### 📚 3. E-Waste Education Catalog
+- Detailed educational database outlining device category details (*Mobile, Laptop, Battery, TV, Printer*).
+- Modal summaries focusing on toxic materials, health risks, environmental damages, and recycling benefits.
+
+### 🧮 4. Reward Calculator & Moderation
+- Visual calculator widget estimating eco-points, recovered metals, and carbon offset values based on item condition.
+- Admin dashboard review moderation panel protecting center ratings from spam reviews.
+
+### 🏆 5. Gamification System
+- Automatic milestone badges (*Eco Beginner, Green Warrior, Earth Saver*) awarded dynamically based on point achievements.
+- Real-time global leaderboard ranking community members by contributions and unlocked achievements.
+
+### 📦 6. Doorstep Pickup Scheduling Wizard
+- Multi-step scheduler supporting device select grids, future date filters, and preferred time slots.
+- User management panel to cancel pending collections, and admin panel to edit fleet logs, add driver notes, and change statuses.
+
+### ⚙️ 7. Admin Control Panel
+- **User Management**: Role toggling (user/admin), profile deletions, and manual adjustment of user points balances (which triggers dynamic badge re-evaluations).
+- **Education Manager**: Administrative interface to create, edit, or delete device hazard listings.
+- **CSV Data Exporter**: Streams instant CSV report downloads for certified facilities, pickups, and user rosters.
+
+### 🤖 8. AI Recommendation Assistant
+- Intelligent search prompt with quick-template triggers.
+- Parses device type, brand, and condition states dynamically to suggest nearest centers, compute points, and format safety guidelines.
+
+### 📉 9. Environmental Impact Dashboard
+- **Impact Cards**: Side-by-side statistics comparing personal contributions to community totals (CO₂ saved, landfill waste diverted in kg, and metal masses).
+- **Custom Charts**: Responsive SVG bar charts (monthly items), donut charts (e-waste categories), and area charts (carbon offsets).
+- **Admin Analytics**: Global overview graphs displaying pickup success rates, facility densities by city, and top recyclers.
+
+</details>
 
 ---
 
 ## 🛠️ Quick Local Setup
 
-### 1. Database & Backend Setup
+### 1. Database & Backend Configuration
 ```bash
-# Install PHP dependencies
+# Install PHP Composer dependencies
 composer install
 
-# Copy environment file and generate app key
+# Create environment configuration and generate application key
 cp .env.example .env
 php artisan key:generate
 
-# Set up your DB details in .env (DB_DATABASE, DB_USERNAME, DB_PASSWORD)
+# Configure your DB connections in .env (DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 
-# Run migrations and seed database
+# Build tables and seed default values
 php artisan migrate:fresh --seed
 
-# Create storage symlink for uploaded avatars
+# Enable storage symlink for profile uploads
 php artisan storage:link
 
-# Start the Laravel application server
+# Boot the Laravel local server
 php artisan serve
 ```
-*(Backend server runs on: `http://127.0.0.1:8000`)*
+*(Server runs on: `http://127.0.0.1:8000`)*
 
-### 2. Frontend Assets compilation
+### 2. Frontend Assets Compilation
 ```bash
 # Install JS dependencies
 npm install
@@ -81,38 +104,36 @@ npm run dev
 ---
 
 ## 🔑 Default Seed Credentials
-You can log in immediately after running `php artisan db:seed` using these defaults:
-- **Standard User**: `user@ewaste.com` / `password`
-- **System Admin**: `admin@ewaste.com` / `password`
+Once you run the database seeders, you can access the platform using these pre-configured accounts:
+- **Standard Recycler**: `user@ewaste.com` / `password`
+- **System Administrator**: `admin@ewaste.com` / `password`
 
 ---
 
 ## 🔗 Complete Application URLs / Routes
 
-Here is the table of all routes and URLs you can visit to go through and verify the application's functionality:
-
-| URL Path | Access Level | Applicable Module | Description / Features to Verify |
+| URL Path | Access Level | Applicable Module | Features / Pages to Verify |
 | :--- | :--- | :--- | :--- |
-| **[`/`](http://127.0.0.1:8000/)** | Public | Module 1 & 6 | **Landing Page**: Upgraded dashboard selector containing side-by-side **Log In** & **Register** buttons for users, guest lookup, and admin access. |
-| **[`/login`](http://127.0.0.1:8000/login)** | Public | Module 1 | **User Login**: Standard user authentication page. |
-| **[`/register`](http://127.0.0.1:8000/register)** | Public | Module 1 | **User Register**: Sign up page to create a new user profile. |
-| **[`/admin/login`](http://127.0.0.1:8000/admin/login)** | Public | Module 1 | **Admin Login**: Separate login form tailored specifically for administrative credentials. |
-| **[`/locator`](http://127.0.0.1:8000/locator)** | Public / User | Module 2 | **Facility Locator**: Interactive map to filter centers by state/city/devices, read reviews, and write reviews (requires login). |
-| **[`/dashboard`](http://127.0.0.1:8000/dashboard)** | User (`role:user`) | Module 1 | **User Dashboard**: Welcome view and navigation menu for authenticated users. |
-| **[`/calculator`](http://127.0.0.1:8000/calculator)** | User (`role:user`) | Module 4 | **Reward Calculator**: Visual device selector wizard; estimates eco-points, recovered metals, and carbon offset values. |
-| **[`/leaderboard`](http://127.0.0.1:8000/leaderboard)** | User (`role:user`) | Module 5 | **Leaderboard & Badges**: Leaderboard rankings, animated level status indicators, and unlocked/locked badge achievements grid. |
-| **[`/pickups`](http://127.0.0.1:8000/pickups)** | User (`role:user`) | Module 6 | **Home Pickups**: Schedule doorstep collections, select slots/future dates, track historical requests, and cancel pending orders. |
-| **[`/recommendations`](http://127.0.0.1:8000/recommendations)** | User (`role:user`) | Module 8 | **AI Assistant**: Natural language prompt field and template selectors to parse e-waste specs, calculate eco-points, locate nearest centers, and inspect toxicity warnings. |
-| **[`/impact`](http://127.0.0.1:8000/impact)** | User (`role:user`) | Module 9 | **Impact Dashboard**: Renders statistics cards and custom interactive SVG charts displaying personal and community carbon offset, metals recovered, and diverted waste. |
-| **[`/profile`](http://127.0.0.1:8000/profile)** | User (`role:user`) | Module 1 | **Profile Manager**: Edit profile details, change passwords, and upload/delete custom avatar images. |
-| **[`/admin/dashboard`](http://127.0.0.1:8000/admin/dashboard)** | Admin (`role:admin`) | Module 1 & 4 | **Admin Dashboard**: Displays aggregate analytics metrics for users, facilities, and calculations. |
-| **[`/admin/facilities`](http://127.0.0.1:8000/admin/facilities)** | Admin (`role:admin`) | Module 2 | **Facility CRUD Manager**: Admin panel to add, edit, or delete certified recycling centers. |
-| **[`/admin/reviews`](http://127.0.0.1:8000/admin/reviews)** | Admin (`role:admin`) | Module 4 | **Review Moderation**: Approve or delete pending reviews submitted by users. |
-| **[`/admin/pickups`](http://127.0.0.1:8000/admin/pickups)** | Admin (`role:admin`) | Module 6 | **Manage Pickups**: Schedule pending pickups, mark completed, and log driver instructions. |
-| **[`/admin/users`](http://127.0.0.1:8000/admin/users)** | Admin (`role:admin`) | Module 7 | **Manage Users**: Toggle user/admin roles, delete users, and adjust user eco-points. |
-| **[`/admin/education`](http://127.0.0.1:8000/admin/education)** | Admin (`role:admin`) | Module 7 | **Manage Education**: Add, edit, or delete educational device hazard profiles. |
-| **[`/admin/reports`](http://127.0.0.1:8000/admin/reports)** | Admin (`role:admin`) | Module 7 | **System Reports**: View summary statistics and export database tables. |
-| **[`/admin/analytics`](http://127.0.0.1:8000/admin/analytics)** | Admin (`role:admin`) | Module 9 | **Platform Analytics**: Core dashboard summarizing site metrics, success rates, facility location densities, and top recyclers. |
+| **`/`** | Public | Modules 1 & 6 | **Landing Page**: Dashboard selector for Log In, Register, or guest locator lookup. |
+| **`/login`** | Public | Module 1 | **Standard Login**: Recycler credentials form. |
+| **`/register`** | Public | Module 1 | **Standard Sign Up**: User registration. |
+| **`/admin/login`** | Public | Module 1 | **Admin Login**: Secure administrative entry form. |
+| **`/locator`** | Public / Auth | Module 2 | **Interactive Locator**: Proximity map, facility details, and user reviews panel. |
+| **`/dashboard`** | User (`role:user`) | Module 1 | **User Dashboard**: Welcome panel and education modules grid. |
+| **`/calculator`** | User (`role:user`) | Module 4 | **Carbon Calculator**: Interactive device specs input estimating rewards. |
+| **`/leaderboard`** | User (`role:user`) | Module 5 | **Global Standings**: Live user leaderboard ranks and unlocked badges grid. |
+| **`/pickups`** | User (`role:user`) | Module 6 | **Pickup Scheduler**: Book doorstep pickups, track orders, or cancel pending requests. |
+| **`/recommendations`** | User (`role:user`) | Module 8 | **AI Assistant**: Natural language parsing console and safety instruction cards. |
+| **`/impact`** | User (`role:user`) | Module 9 | **Impact Dashboard**: Responsive SVG charts tracking personal and community metrics. |
+| **`/profile`** | User (`role:user`) | Module 1 | **Account Manager**: Edit credentials, update passwords, and upload profile pictures. |
+| **`/admin/dashboard`** | Admin (`role:admin`) | Modules 1 & 4 | **Admin Console**: Unified high-level platform KPI summaries cards. |
+| **`/admin/facilities`** | Admin (`role:admin`) | Module 2 | **Facility CRUD**: Manager to create, update, or delete recycling centers. |
+| **`/admin/reviews`** | Admin (`role:admin`) | Module 4 | **Review Moderation**: Approve or delete pending reviews before going public. |
+| **`/admin/pickups`** | Admin (`role:admin`) | Module 6 | **Pickups Console**: Manage fleet collections, add driver notes, and complete orders. |
+| **`/admin/users`** | Admin (`role:admin`) | Module 7 | **User Administration**: Toggle admin roles, delete profiles, or adjust user points. |
+| **`/admin/education`** | Admin (`role:admin`) | Module 7 | **Education CRUD**: Portal to create, edit, or delete device profiles. |
+| **`/admin/reports`** | Admin (`role:admin`) | Module 7 | **System Reports**: Overview statistics summaries and CSV data downloads. |
+| **`/admin/analytics`** | Admin (`role:admin`) | Module 9 | **Platform Analytics**: Performance chart dashboards tracking city densities and metrics. |
 
 ---
 
@@ -120,10 +141,10 @@ Here is the table of all routes and URLs you can visit to go through and verify 
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `GET` | `/api/facilities/nearby` | Resolves centers closest to specified coordinates (`lat`, `lng`). |
-| `GET` | `/api/facilities/search` | Performs text matches over certified facility attributes (city, state, code, device). |
-| `GET` | `/api/facilities/{id}` | Fetches details and approved reviews for a single facility. |
-| `POST` | `/api/facilities/{id}/review` | Saves a new star rating and review comment (auth required). |
-| `GET` | `/api/devices` | Returns educational details, hazardous elements, and health facts for electronic devices. |
-| `POST` | `/recommendations/suggest` | Accepts a natural language query and coordinates to output parsed e-waste specs, closest centers, rewards, and safety guidelines. |
-| `GET` | `/admin/reports/download/{type}` | Generates and downloads a CSV report for `users`, `facilities`, or `pickups` (admin required). |
+| `GET` | `/api/facilities/nearby` | Resolves centers closest to coordinates (`lat`, `lng`). |
+| `GET` | `/api/facilities/search` | Text matches over center locations (city, state, pincode, devices). |
+| `GET` | `/api/facilities/{id}` | Fetches individual center details and approved reviews list. |
+| `POST` | `/api/facilities/{id}/review` | Saves a new rating and comment (auth required). |
+| `GET` | `/api/devices` | Returns educational details, hazardous materials, and health hazards list. |
+| `POST` | `/recommendations/suggest` | NLP query input; returns matched specs, nearest center, and safety guidelines. |
+| `GET` | `/admin/reports/download/{type}` | Downloads CSV reports for `users`, `facilities`, or `pickups` (admin auth required). |
