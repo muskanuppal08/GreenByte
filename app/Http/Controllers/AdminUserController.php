@@ -66,6 +66,19 @@ class AdminUserController extends Controller
         // Evaluate badge status
         $user->checkAndAwardBadges();
 
+        // Send email and create in-app notification
+        try {
+            \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\RewardCredited($user, $validated['points'], 'Administrative Point Adjustment'));
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error("Failed to send reward email: " . $e->getMessage());
+        }
+
+        \App\Models\Notification::create([
+            'user_id' => $user->id,
+            'title' => 'Reward Credited',
+            'message' => "You have been credited with {$validated['points']} Eco-Points. New Balance: {$newPoints}."
+        ]);
+
         return redirect()->back()->with('status', 'User eco-points adjusted successfully!');
     }
 

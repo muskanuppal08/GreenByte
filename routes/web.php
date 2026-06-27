@@ -50,6 +50,14 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
 
     // Environmental Impact Dashboard
     Route::get('/impact', [App\Http\Controllers\ImpactDashboardController::class, 'index'])->name('impact.index');
+
+    // In-App Notifications API
+    Route::get('/notifications', [App\Http\Controllers\InAppNotificationController::class, 'index'])->name('notifications.index');
+    Route::post('/notifications/{id}/read', [App\Http\Controllers\InAppNotificationController::class, 'markAsRead'])->name('notifications.read');
+    Route::delete('/notifications/{id}', [App\Http\Controllers\InAppNotificationController::class, 'destroy'])->name('notifications.destroy');
+
+    // AI Chatbot API
+    Route::post('/chatbot', [App\Http\Controllers\ChatbotController::class, 'chat'])->name('chatbot.chat');
 });
 
 // ─── Admin Area (requires auth + admin role) ──────────────────────────────

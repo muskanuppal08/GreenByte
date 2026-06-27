@@ -1,8 +1,11 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import { useState } from 'react';
+import CertificateModal from '@/Components/CertificateModal';
 
 export default function Index({ personalMetrics, globalMetrics, donutData, barChartData, lineChartData, recentHistory }) {
+    const user = usePage().props.auth.user;
+    const [selectedCertificate, setSelectedCertificate] = useState(null);
     const [hoveredSlice, setHoveredSlice] = useState(null);
     const [hoveredBar, setHoveredBar] = useState(null);
     const [hoveredPoint, setHoveredPoint] = useState(null);
@@ -425,6 +428,12 @@ export default function Index({ personalMetrics, globalMetrics, donutData, barCh
                                                 <p className="text-[10px] text-slate-400 font-bold uppercase">Points Earned</p>
                                                 <p className="font-extrabold text-amber-500">+{item.points_earned} pts</p>
                                             </div>
+                                            <button
+                                                onClick={() => setSelectedCertificate(item)}
+                                                className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-[10px] font-extrabold tracking-wider uppercase transition-all shadow-sm shadow-emerald-500/10 no-print"
+                                            >
+                                                Certificate
+                                            </button>
                                         </div>
                                     </div>
                                 ))}
@@ -436,6 +445,19 @@ export default function Index({ personalMetrics, globalMetrics, donutData, barCh
 
                 </div>
             </div>
+
+            {/* Certificate Modal */}
+            <CertificateModal
+                isOpen={!!selectedCertificate}
+                onClose={() => setSelectedCertificate(null)}
+                userName={user?.name || 'Recycler'}
+                deviceType={selectedCertificate?.device_type}
+                brand={selectedCertificate?.brand}
+                model={selectedCertificate?.model}
+                date={selectedCertificate?.date}
+                carbonSaved={selectedCertificate?.carbon_saved}
+                pointsEarned={selectedCertificate?.points_earned}
+            />
         </AuthenticatedLayout>
     );
 }
