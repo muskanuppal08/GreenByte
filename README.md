@@ -5,6 +5,9 @@
 [![Vite Version](https://img.shields.shields.shields.shields.shields.shields.io/badge/Vite-8.0-646CFF?style=for-the-badge&logo=vite)](https://vite.dev)
 [![License](https://img.shields.shields.shields.shields.shields.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
+### 🌐 Live Deployment
+Access the live platform here: **[https://handsome-nourishment-production-2943.up.railway.app](https://handsome-nourishment-production-2943.up.railway.app)**
+
 **GreenByte** is a comprehensive, gamified electronic waste (e-waste) management platform designed to encourage responsible hardware disposal. Standard users can consult our local AI assistant, locate closest certified facilities using real-time geocoding, book doorstep pickups, calculate carbon savings, earn badges, and rise through levels on a global leaderboard. Administrators are equipped with points adjustment panels, review moderation boards, doorstep fleet trackers, and exportable system analytics.
 
 ---
