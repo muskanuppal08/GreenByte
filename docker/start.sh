@@ -34,5 +34,10 @@ if [ -n "$PORT" ]; then
     sed -i "s/<VirtualHost \*:80>/<VirtualHost *:$PORT>/g" /etc/apache2/sites-available/000-default.conf
 fi
 
+# Disable conflicting Apache MPMs to prevent "More than one MPM loaded" error
+echo "Configuring Apache MPM modules..."
+a2dismod mpm_event mpm_worker || true
+a2enmod mpm_prefork || true
+
 # Start Apache in the foreground
 exec apache2-foreground
