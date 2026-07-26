@@ -50,7 +50,7 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 RUN composer install --no-dev --optimize-autoloader
 
 # Install NPM dependencies & build production assets
-RUN npm install \
+RUN npm install --legacy-peer-deps \
     && npm run build \
     && rm -rf node_modules
 
